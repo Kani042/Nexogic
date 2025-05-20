@@ -12,6 +12,7 @@
         html {
             scroll-behavior: smooth;
         }
+
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
@@ -20,6 +21,28 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        
+        @keyframes fadeSlideIn {
+            0%
+
+        {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .animate-fade-slide {
+            animation: fadeSlideIn 1s ease-out forwards;
+        }
+    
+
     </style>
 </head>
 <!--<body class="bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] font-sans text-white">-->
@@ -66,7 +89,7 @@
     <section id="home" x-data="{
              images: [
              { src: 'assests/images/websitedesign.jpg' , heading: 'Affordable Web Solutions Tailored for your Business' },
-             { src: 'assests/images/webdesign2.jpg' , heading: 'Get  Stunning Website Starting at Just $500!' },
+             { src: 'assests/images/webdesign2.jpg' , heading: 'Get a Stunning Website Starting at Just $500!' },
              { src: 'assests/images/webdesign3.jpg' , heading: 'Websites Crafted for Impact Excellence Growth' },
              { src: 'assests/images/webdesign4.jpg' , heading: 'Passion Drives us, Quality Perfects Your Success' },
              ],
@@ -89,7 +112,7 @@
                 <img :src="image.src" alt="" class="w-full h-full object-cover opacity-80" />
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center pb-8">
                     <div class="flex flex-col bottom-center space-y-4 text-left px-11">
-                        <p class="text-2xl text-white font-bold ">Your Success is Our Priority </p>
+                        <p class="text-2xl text-white font-bold animate-fade-slide style="animation-delay: 0.3s; ">Your Success is Our Priority </p>
                         <h2 class="text-3xl md:text-8xl text-white font-bold" x-text="image.heading"></h2>
 
                         <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" class="pb-3 w-fit bg-white bg-opacity-80 text-black font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-100 transition">
@@ -117,217 +140,208 @@
         </div>
     </section>
 
-
     <!-- About -->
-    <section id="about" class="linear py-16 px-6 bg-white  text-left">
+    <section id="about" class=" py-5   bg-[#F9F7F4]  text-left ">
         <!--bg-[#142533]-->
-        <div class="md:max-w-screen-4xl mx-auto rounded-2xl shadow-xl overflow-hidden">
-            <!-- Background Image -->
-            <!--<img src="assests/images/webdesign5.jpg" class="w-full object-cover" alt="Gallery 1" />-->
-            <!-- Overlay Text Centered -->
-            <div class="grid md:grid-cols-2">
-                <div class=" inset-0 flex flex-col justify-center items-center text-left pl-4 ">
-                    <!--bg-black/30 grayscale-->
-                    <h2 class="text-5xl font-bold text-gray-600 mb-4">Dreaming of the Perfect Website for your Business?<br /><br /> </h2>
-                    <p class="text-gray-700 text-4xl font-semibold">We will Bring it to Life!<br /><br /></p>
-                    <!--h2 class="text-7xl font-bold text-white mb-4">Empowering Businesses with Innovative, High-Quality Website Solutions That Drive Success</h2>-->
-                    <p class=" text-gray-800  text-xl mb-4 pb-4">We built Innovative, High-Quality Website Solutions That Drive Success.<br /><br /></p>
-                    <p class=" text-gray-800  text-xl mb-4 pb-4">Whether you're a startup or an established brand, we craft custom websites that tell your story, engage your audience, and grow your business.<br /><br /></p>
-                    <p class=" text-gray-800  text-xl mb-4 pb-4">Your vision, our expertise — together, let’s create something remarkable.<br /><br /></p>
-                    <p class=" text-gray-800  text-4xl mb-4 pb-4">Ready to stand out online?</p>
-                    <p class=" text-gray-800  text-4xl mb-4 pb-4">Let's Connect</p>
-                </div>
-                <div>
-                    <img src="assests/images/website5.jpg" class="w-full object-cover pt-4" alt="Gallery 1" />-->
-                </div>
+        <!--<div class="md:max-w-screen-7xl  overflow-hidden">-->
+        <!-- Background Image -->
+        <!--<img src="assests/images/webdesign5.jpg" class="w-full object-cover" alt="Gallery 1" />-->
+        <!-- Overlay Text Centered -->
+        <div class="grid md:grid-cols-2 w-full ">
+            <div class=" inset-0 flex flex-col justify-center items-start text-left pl-4 ">
+                <!--bg-black/30 grayscale-->
+                <h2 class="text-5xl font-bold text-gray-600 mb-4">Dreaming of the Perfect Website for your Business?<br /><br /> </h2>
+                <p class="text-gray-500 text-4xl font-semibold animate-fade-slide">We Bring it to Life!<br /><br /></p>
+                <!--h2 class="text-7xl font-bold text-white mb-4">Empowering Businesses with Innovative, High-Quality Website Solutions That Drive Success</h2>-->
+                <p class=" text-gray-500  text-xl mb-4 pb-4">At Nexogic CloudTech Solutions, we don't just build websites,<br /> We craft digital experiences that capture attention, spark emotion, and drive results. We built <b>Innovative</b>, High-Quality Website Solutions That Drive Success.</p>
+                <p class=" text-gray-500  text-xl mb-4 pb-4">Whether you're a <b>startup</b> or an <b>established brand</b>, we craft custom websites that tell your story, engage your audience, and grow your business.</p>
+                <p class=" text-gray-500  text-xl mb-4 pb-4"><b>Your vision</b>, <b>our expertise</b> — together, let’s create something remarkable.<br /><br /></p>
+                <p class=" text-gray-500 text-xl mb-4 pb-4"> We Help You Make a <b>Lasting Digital Impression</b>.</p>
             </div>
+            <div class="relative ">
+                <!-- Warm Gradient Overlay -->
+                <img src=" assests/images/website5.jpg" class=" w-screen object-cover " alt="Gallery 1" />
+
+                <div class="absolute inset-0 bg-gradient-to-t from-[#f59e0b]/30 to-[#78350f]/30 mix-blend-multiply z-10"></div>
+            </div>
+
         </div>
+        <div>
+            <p class=" text-gray-600 text-center font-bold text-4xl mb-4 pb-4">Ready to stand out online?</p>
+            <p class=" text-gray-500 text-center font-semibold text-4xl mb-4 ">Let's Connect</p>
+        </div>
+
+        <!-- </div>-->
     </section>
 
-    <section>
-        <div class="bg-white py-16 px-4">
-            <div>
-                <h2 class="text-4xl font-bold text-gray-600 max-w-7xl mx-auto mb-4 p-3">Why We’re the Right Choice</h2>
-            </div>
-            <div class="relative h-screen bg-cover bg-center" style="background-image: url('assests/images/img1.jpg')">
-                <!-- Overlay to darken the background (optional) -->
-                <!--<div class="absolute inset-0 bg-black bg-opacity-50"></div>-->
-                <!-- Foreground content: 3 tiles -->
-                <div class="relative z-10 flex justify-center items-center h-full space-x-6 px-4">
-                    <!-- Tile 1 -->
-                    <div class="bg-white bg-opacity-80 rounded-2xl p-8 w-1/4 text-center shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-600 mb-2">Tailored, Not Templated</h3>
-                        <p class="text-gray-600 font-bold">We craft every website from scratch — no cookie-cutter designs. Your brand deserves something as unique as you are.</p>
-                    </div>
+    <section class="bg-white  mx-auto  py-12">
+        <div class="flex flex-col md:flex-row h-full w-full">
 
-                    <!-- Tile 2 -->
-                    <div class="bg-white bg-opacity-80 rounded-2xl p-8 w-1/4 text-center shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-600 mb-2">Speed Meets Style</h3>
-                        <p class="text-gray-600">We blend eye-catching design with lightning-fast performance, so your site doesn’t just look good — it works like a charm.</p>
-                    </div>
+            <!-- Left Fixed Tile -->
+            <!-- Left Fixed Tile -->
+            <div class=" relative md:w-1/2 w-full h-fit md:h-screen sticky top-0 flex items-center justify-center bg-[#E0D9CD] text-center text-4xl font-bold ">
+                <h2 class="text-gray-600 leading-snug text-left pl-4">
+                    Empowering Businesses with <br /> 11 years of Web Development Excellence.
 
-                    <!-- Tile 3 -->
-                    <div class="bg-white bg-opacity-80 rounded-2xl p-8 w-1/4 text-center shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-600 mb-2">Tech Made Simple, Just for You</h3>
-                        <p class="text-gray-600">We keep things simple, transparent, and jargon-free. You dream it, we build it — and you’ll always know what’s happening.</p>
+
+                    <!--Get to Know Us<br /><br />11 Years of Expertise in Web Development-->
+                </h2>
+                <div class="absolute items-center justify-center right-5 ">
+                    <!-- Dot Indicators -->
+                    <div class=" left-0 top-8 flex flex-col gap-4 pl-2 z-10">
+                        <span class="dot w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" data-index="0"></span>
+                        <span class="dot w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" data-index="1"></span>
+                        <span class="dot w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" data-index="2"></span>
+                        <span class="dot w-3 h-3 bg-gray-400 rounded-full transition-all duration-300" data-index="3"></span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    
-    <section class="bg-white py-16 px-4">
-
-        <!-- Main grid container with background image -->
-        <div class="relative h-screen grid grid-cols-2 bg-cover bg-center" style="background-image: url('assests/images/img1.jpg')">
-
-            <!-- Left Half (with dark overlay and centered text) -->
-            <div class="relative flex items-center justify-center">
-                <!-- Overlay: grayscale + brightness -->
-                <div class="absolute inset-0 bg-black bg-opacity-10 backdrop-grayscale backdrop-brightness-50 z-0"></div>
-
-                <!-- Centered Text -->
-                <div class="relative z-10 text-white text-center px-6">
-                    <h2 class="text-5xl font-bold mb-4">Why we are the Right Choice</h2>
-
-                </div>
-            </div>
-
-            <!-- Right Half (normal image with content) -->
-            <div class="flex flex-col justify-center px-8 ">
+            
+            <!-- Right Tile -->
+            <div class="md:w-1/2 w-full flex relative ">
                 
-            </div>
-        </div>
-        <div class="relative h-screen grid grid-cols-2 bg-cover bg-center" style="background-image: url('assests/images/img2.jpg')">
 
-            <!-- Left Half (with dark overlay and centered text) -->
-            <!-- Right Half (normal image with content) -->
-            <div class="flex flex-col justify-center px-8 ">
-               
+                <!-- Scrollable Content with Anchored Sections -->
+                <div class="ml-8 pr-4 text-gray-600 text-xl space-y-24" id="scroll-container">
+                    <div class="scroll-section" data-index="0">
+                        <p>
+                            We are a passionate team of designers, developers, and digital strategists committed to crafting beautiful, high-performing websites that empower businesses to thrive online.
+                        </p>
+                        <p>
+                            At our core, we believe that every brand has a story worth telling — and a website is the perfect stage. No matter your industry or goals, we bring your vision to life with precision, creativity, and care, turning ideas into impactful digital experiences.
+                        </p>
+                        <p>
+                            With a strong focus on innovation, user experience, and results, we partner with you to build more than just a website — we build a digital experience that connects, converts, and lasts.
+                        </p>
+                    </div>
+                    <div class="scroll-section" data-index="1">
+                        <p><strong>Creativity with Purpose:</strong> We design with intention — blending beauty and function to create digital experiences that resonate.</p>
+                        <p><strong>Client-Centric Collaboration:</strong> We believe in partnerships, not projects. Your goals drive our process, every step of the way.</p>
+                        <p><strong>Integrity & Transparency:</strong> Honesty and accountability are embedded in how we communicate, build, and deliver.</p>
+                        <p><strong>Innovation as Standard:</strong> From cutting-edge tools to evolving UX trends, we embrace change to keep you ahead of the curve.</p>
+                        <p><strong>Excellence in Execution:</strong> We don’t just finish projects — we perfect them. Every pixel and performance metric matters.</p>
 
-            </div>
-            <div class="relative flex items-center justify-center">
-                <!-- Overlay: grayscale + brightness -->
-                <div class="absolute inset-0 bg-black bg-opacity-10 backdrop-grayscale backdrop-brightness-50 z-0"></div>
-
-                <!-- Centered Text -->
-                <div class="relative z-10 text-white text-center px-6">
-                    <h3 class="text-2xl font-bold text-white mb-2">Tech Made Simple, Just for You</h3>
-                    <p class="text-white text-lg">
-                        We keep things simple, transparent, and jargon-free. You dream it, we build it — and you’ll always know what’s happening.<br /><br />
-                    </p>
-
-                    <h3 class="text-2xl font-bold text-white mb-2">Speed Meets Style</h3>
-                    <p class="text-white">We blend eye-catching design with lightning-fast performance, so your site doesn’t just look good — it works like a charm.<br /><br /></p>
-                    <h3 class="text-2xl font-bold text-white mb-2">Tailored, Not Templated</h3>
-                    <p class="text-white font-bold">We craft every website from scratch — no cookie-cutter designs. Your brand deserves something as unique as you are.<br /><br /></p>
-
-
-
+                    </div>
+                    <div class="scroll-section" data-index="2">
+                        <h3 class="text-2xl font-bold">Our Approach</h3>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li><strong>Discover:</strong> We start with understanding — your brand, your audience, your goals.</li>
+                            <li><strong>Design:</strong> We craft intuitive, accessible user experiences that reflect your identity.</li>
+                            <li><strong>Develop:</strong> Built with modern, scalable technologies to ensure performance and security.</li>
+                            <li><strong>Deploy:</strong> Seamless launch with continued support and optimization.</li>
+                            <li><strong>Evolve:</strong> Measure results, refine strategies, and grow with impact.</li>
+                        </ul>
+                    </div>
+                    <div class="scroll-section" data-index="3">
+                        <h3 class="text-2xl font-bold">Our Mission</h3>
+                        <p>
+                            To empower businesses by creating meaningful, user-driven digital experiences that engage, inspire, and deliver measurable impact.
+                        </p>
+                    </div>
+                    <div class="scroll-section" data-index="4">
+                        <h3 class="text-2xl font-bold">Our Vision</h3>
+                        <p>
+                            To be the most trusted digital partner for forward-thinking brands — where creativity, strategy, and technology come together to build timeless web experiences.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </section>
 
-    
+    <script>
+        const sections = document.querySelectorAll('.scroll-section');
+        const dots = document.querySelectorAll('.dot');
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    const index = entry.target.dataset.index;
+                    if (entry.isIntersecting) {
+                        dots.forEach(dot => dot.classList.remove('bg-gray-700', 'scale-125'));
+                        dots[index].classList.add('bg-gray-700', 'scale-125');
+                    }
+                });
+            },
+            {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.6 // triggers when 60% of section is visible
+            }
+        );
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+
 
     <!-- Programs -->
-
-    <section>
-        <div class="bg-white py-16 px-4">
-            <div>
-                <h2 class="text-4xl font-bold text-gray-600 max-w-7xl mx-auto mb-4 p-3 text-center">Why We’re the Right Choice</h2>
-            </div>
-            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-4">
-
-                <!-- Tile 1 -->
-                <div class="relative  overflow-hidden shadow-xl">
-                    <img src="assests/images/img1.jpg" alt="Tailored Design" class="w-full h-[600px] object-cover">
-                    <div class="absolute inset-0  flex flex-col items-center justify-center text-center p-4 ">
-                        <h3 class="text-2xl font-bold text-white mb-2">Tailored, Not Templated</h3>
-                        <p class="text-white font-bold">We craft every website from scratch — no cookie-cutter designs. Your brand deserves something as unique as you are.</p>
-                    </div>
-                </div>
-
-                <!-- Tile 2 -->
-                <div class="relative  overflow-hidden shadow-xl">
-                    <img src="assests/images/img2.jpg" alt="Speed Meets Style" class="w-full h-[600px] object-cover">
-                    <div class="absolute inset-0  flex flex-col items-center justify-center text-center p-4">
-                        <h3 class="text-2xl font-bold text-white mb-2">Speed Meets Style</h3>
-                        <p class="text-white">We blend eye-catching design with lightning-fast performance, so your site doesn’t just look good — it works like a charm.</p>
-                    </div>
-                </div>
-
-                <!-- Tile 3 -->
-                <div class="relative  overflow-hidden shadow-xl">
-                    <img src="assests/images/img3.jpg" alt="Tech Made Simple" class="w-full h-[600px] object-cover">
-                    <div class="absolute inset-0 bg-gray-900 bg-opacity-10 flex flex-col items-center justify-center text-center p-4">
-                        <h3 class="text-2xl font-bold text-white mb-2">Tech Made Simple, Just for You</h3>
-                        <p class="text-white">We keep things simple, transparent, and jargon-free. You dream it, we build it — and you’ll always know what’s happening.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="Our Services" class="bg-white shadow-4xl max-w-7xl mx-auto py-12 px-4 ">
-        <!--<div class="max-w-5xl mx-auto  gap-2">
-            <h2 class="text-5xl font-bold text-gray-600 ">Our Services</h2>
-        </div>--->
-        <div>
-            <h2 class="text-4xl font-bold text-gray-600 mb-4 p-3">Our Services</h2>
-        </div>
-        <div class="bg-white grid md:grid-cols-5 p-3 gap-2">
-            <div class="bg-white rounded-2xl shadow-4xl ">
-                <div class="w-[150px] h-[150px] overflow-hidden ">
-                    <img src="assests/images/web1.png" class="w-full h-full object-cover" alt="Description" />
-                </div>
-
-                <h2 class="text-3xl font-bold mb-2 text-gray-600"> Custom Website Design & Development</h2>
-                <p class="text-gray-600">
-                    Tailor-made websites designed to reflect your brand, engage your audience, and deliver results.
-                    From simple sites to complex platforms — we build it all.
-                </p>
-            </div>
-            <div class="bg-white rounded-2xl shadow-4xl">
-                <div class="w-[150px] h-[150px] overflow-hidden ">
-                    <img src="assests/images/web2.png" class="w-full h-full object-cover" alt="Description" />
-                </div>
-                <h2 class="text-3xl font-bold mb-2 text-gray-600"> Responsive Web Design</h2>
-                <p class="text-gray-600">Mobile-first, cross-device friendly websites that look stunning and function flawlessly on every screen size.</p>
-            </div>
-            <div class="bg-white rounded-2xl shadow-4xl">
-                <div class="w-[150px] h-[150px] overflow-hidden ">
-                    <img src="assests/images/web3.png" class="w-full h-full object-cover" alt="Description" />
-                </div>
-                <h2 class="text-3xl font-bold mb-2 text-gray-600"> E-Commerce Development</h2>
-                <p class="text-gray-600">Launch and grow your online store with secure, high-performance e-commerce platforms like Shopify, WooCommerce, or custom solutions.</p>
-            </div>
-            <div class="bg-white rounded-2xl shadow-4xl">
-                <div class="w-[150px] h-[150px] overflow-hidden ">
-                    <img src="assests/images/web4.png" class="w-full h-full object-cover" alt="Description" />
-                </div>
-                <h2 class="text-3xl font-bold mb-2 text-gray-600"> Web App Development</h2>
-                <p class="text-gray-600">Robust, scalable, and efficient web applications built to streamline your operations and meet your business needs</p>
-            </div>
-            <div class="bg-white rounded-2xl shadow-4xl">
-                <div class="w-[150px] h-[150px] overflow-hidden ">
-                    <img src="assests/images/web5.png" class="w-full h-full object-cover" alt="Description" />
-                </div>
-                <h2 class="text-3xl font-bold mb-2 text-gray-600"> Website Maintenance & Support</h2>
-                <p class="text-gray-600">Ongoing website support, updates, backups, and performance monitoring to keep your site secure and running smoothly.</p>
-            </div>
-        </div>
-    </section>
     <!-- Gallery -->
 
-    <section id="new" class="relative max-w-7xl mx-auto py-12 px-4 data-aos="fade-up">
+    <section id="Our Services" class="bg-[#F9F7F4] shadow-4xl  h-[750px]  py-2 ">
+        <div class="w-full">
+            <h2 class="text-4xl font-bold text-gray-600 mb-4 p-3 pt-3 text-center">Our Services</h2>
+        </div>
+
+        <div class="relative w-full ">
+            <!-- Background Image -->
+            <img src="assests/images/ourseervice.png" class="w-full h-[450px] object-cover" alt="Description" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#f59e0b]/30 to-[#78350f]/30 mix-blend-multiply z-10"></div>
+
+            <!-- Tiles Overlapping the Bottom of Image -->
+            <div class="absolute inset-x-0 bottom-0 z-10 grid md:grid-cols-5 gap-4 px-4 translate-y-40">
+                <!-- Tile 1 -->
+                <div class="bg-[#F9F7F4] p-4 rounded-xl shadow-xl">
+                    <div class="w-[80px] h-[80px] overflow-hidden mb-2">
+                        <img src="assests/images/web1.png" class="h-full object-cover" alt="Description" />
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 text-gray-600">Custom Website Design & Development</h2>
+                    <p class="text-gray-600 text-sm">Tailor-made websites designed to reflect your brand and engage your audience.</p>
+                </div>
+
+                <!-- Repeat for other tiles -->
+                <div class="bg-[#F9F7F4] p-4 rounded-xl shadow-xl">
+                    <div class="w-[80px] h-[80px] overflow-hidden mb-2">
+                        <img src="assests/images/web2.png" class="h-full object-cover" alt="Responsive Design" />
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 text-gray-600">Responsive Web Design</h2>
+                    <p class="text-gray-600 text-sm">Mobile-first websites that look great on all screen sizes.</p>
+                </div>
+
+                <div class="bg-[#F9F7F4] p-4 rounded-xl shadow-xl">
+                    <div class="w-[80px] h-[80px] overflow-hidden mb-2">
+                        <img src="assests/images/web3.png" class="h-full object-cover" alt="E-Commerce" />
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 text-gray-600">E-Commerce Development</h2>
+                    <p class="text-gray-600 text-sm">Launch your store with Shopify, WooCommerce, or custom builds.</p>
+                </div>
+
+                <div class="bg-[#F9F7F4] p-4 rounded-xl shadow-xl">
+                    <div class="w-[80px] h-[80px] overflow-hidden mb-2">
+                        <img src="assests/images/web4.png" class="h-full object-cover" alt="Web Apps" />
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 text-gray-600">Web App Development</h2>
+                    <p class="text-gray-600 text-sm">Robust, scalable apps to meet your business needs.</p>
+                </div>
+
+                <div class="bg-[#F9F7F4] p-4 rounded-xl shadow-xl">
+                    <div class="w-[80px] h-[80px] overflow-hidden mb-2">
+                        <img src="assests/images/web5.png" class="h-full object-cover" alt="Maintenance" />
+                    </div>
+                    <h2 class="text-xl font-bold mb-2 text-gray-600">Maintenance & Support</h2>
+                    <p class="text-gray-600 text-sm">We keep your site updated, secure, and running smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+
+
+    <section id="new" class=" relative  mx-auto py1 data-aos="fade-up">
         <div class=" grid md:grid-cols-2 gap-2">
-            <h2 class="text-4xl font-bold text-gray-600 mb-4 p-3">Industry Focused.<br /> Results Driven.</h2>
-            <div class="text-center py-1 ">
+            <h2 class="text-4xl font-bold text-gray-600 mb-4 p-8">Industry Focused.<br /> Results Driven.</h2>
+            <div class="text-center p-8 ">
                 <p class="text-3xl mb-4 text-gray-600">
                     We create solutions that align with your market, your audience, and your goals.
                 </p>
@@ -338,50 +352,50 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
         </button>
-        <div id="scrollContainer" class="flex overflow-x-auto space-x-6 px-10 scrollbar-hide scroll-smooth ">
+        <div id="scrollContainer" class="flex overflow-x-auto space-x-6 px-3 scrollbar-hide scroll-smooth ">
             <!-- Industry Cards -->
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry2.jpg" alt="Construction" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry2.jpg" alt="Construction" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Construction & Real Estate</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/daycare.jpg" alt="Daycare" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/daycare.jpg" alt="Daycare" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Childcare & Daycare Centers</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry5.jpg" alt="Hospitality" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry5.jpg" alt="Hospitality" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Hospitality & Travel</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry6.jpg" alt="Tech" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry6.jpg" alt="Tech" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Tech & Startups</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry7.jpg" alt="Professional" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry7.jpg" alt="Professional" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Professional Services</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry8.jpg" alt="Education" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry8.jpg" alt="Education" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Education & eLearning</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry4.jpg" alt="Creative" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry4.jpg" alt="Creative" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Creative & Media</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry9.jpg" alt="E-commerce" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry9.jpg" alt="E-commerce" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">E-Commerce & Retail</div>
             </div>
 
-            <div class="min-w-[600px] h-[650px] bg-white shadow-xl rounded-2xl overflow-hidden flex flex-col">
-                <img src="assests/images/industry10.jpg" alt="Healthcare" class="h-[600px] w-full object-cover rounded-3xl shadow-2xl" />
+            <div class="min-w-[400px] h-[650px] bg-white shadow-xl  overflow-hidden flex flex-col">
+                <img src="assests/images/industry10.jpg" alt="Healthcare" class="h-[600px] w-full object-cover  shadow-2xl" />
                 <div class="p-4 text-center font-semibold text-gray-700">Healthcare & Wellness</div>
             </div>
 
@@ -395,20 +409,57 @@
 
 
 
+    <section class="py-12">
+        <div class="relative w-screen h-screen bg-blend-">
+            <!-- Background Image -->
+            <img src="assests/images/img1.jpg" class="w-full h-full object-cover" alt="Scenic" />
+
+            <!-- Warm Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#f59e0b]/30 to-[#78350f]/30 mix-blend-multiply z-10"></div>
+
+
+            <div class="absolute inset-0 bg-[#f59e0b]/30 mix-blend-multiply backdrop-brightness-75 z-0"></div>
+
+            <!-- Optional Darkening Overlay -->
+            <div class="absolute inset-0 backdrop-brightness-75 z-20"></div>
+
+            <!-- Text Overlay -->
+            <div class="absolute inset-0 z-30 flex items-center px-6 text-white">
+                <div class="text-center text-white text-4xl font-bold ">Why We are the Right Choice</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Tech Made Simple, Just for You</h3>
+                    <p class="text-lg mb-6">
+                        We keep things simple, transparent, and jargon-free. You dream it, we build it — and you’ll always know what’s happening.
+                    </p>
+                    <h3 class="text-2xl font-bold mb-2">Speed Meets Style</h3>
+                    <p class="mb-6">
+                        We blend eye-catching design with lightning-fast performance, so your site doesn’t just look good — it works like a charm.
+                    </p>
+                    <h3 class="text-2xl font-bold mb-2">Tailored, Not Templated</h3>
+                    <p>
+                        We craft every website from scratch — no cookie-cutter designs. Your brand deserves something as unique as you are.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Contact -->
-    <section id="contact" class="py-20 px-6 bg-[#1b2b3a] text-center">
+    <section id="contact" class="py-20 px-6   bg-[#F9F7F4] text-center">
+        <!--bg-[#1b2b3a]-->
         <div class="max-w-xl mx-auto">
-            <h2 class="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+            <h2 class="text-3xl font-bold text-gray-600 mb-6">Get in Touch</h2>
             <form class="space-y-4 text-left">
-                <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-600 bg-[#243447] text-white rounded focus:outline-none focus:ring focus:border-cyan-400" />
-                <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-600 bg-[#243447] text-white rounded focus:outline-none focus:ring focus:border-cyan-400" />
-                <textarea rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-600 bg-[#243447] text-white rounded focus:outline-none focus:ring focus:border-cyan-400"></textarea>
-                <button class="bg-white text-black px-6 py-3 rounded-full shadow-xl font-semibold hover:bg-cyan-700 transition w-full">
+                <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-600 bg-white text-white rounded focus:outline-none focus:ring focus:border-cyan-400" />
+                <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-600 bg-white text-white rounded focus:outline-none focus:ring focus:border-cyan-400" />
+                <textarea rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-600 bg-white text-white rounded focus:outline-none focus:ring focus:border-cyan-400"></textarea>
+                <button class="bg-white text-black px-6 py-3 rounded-full shadow-xl font-semibold hover:bg-gray-900 transition w-full">
                     Send Message
                 </button>
             </form>
-            <p class="mt-6 text-blue-200">📍 Burnaby, BC | 📧 hello@nexogiccloudtechsolutions.ca | 📞 (604) 123-4567</p>
+            <p class="mt-6 text-gray-600">📍 Burnaby, BC | 📧 hello@nexogiccloudtechsolutions.ca | 📞 (604) 123-4567</p>
         </div>
     </section>
 
